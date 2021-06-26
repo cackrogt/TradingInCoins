@@ -1,1 +1,17 @@
-<p>main-page works!</p>
+<div class="row justify-content-md-center"><table id="customers">
+  <tr>
+    <th>Buy Price</th>
+    <th>Current Price</th>
+    <th>Increment</th>
+    <th>Last Increment time</th>
+    <th>Should Sell?</th>
+  </tr>
+  <tr *ngFor="let x of arr">
+    <td>{{x.buyP}}</td>
+    <td>{{x.currP}}</td>
+    <td>{{x.inc}}</td>
+    <td>{{x.lastIncTime}}</td>
+    <td>{{x.shouldSell}}</td>
+  </tr>
+</table>
+</div>
