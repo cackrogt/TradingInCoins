@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MainPageService} from './main-page.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: MainPageService) { }
+  values : any;
   public arr: any;
   ngOnInit(): void {
+    this.service.getCoinApi().subscribe((row) => {
+      this.values = row;
+      console.log(this.values);
+      console.log(row);
+    });
     this.arr = [];
     for (let i = 0; i < 10; i++){
       let row: any= {
